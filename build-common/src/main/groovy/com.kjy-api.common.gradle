@@ -1,0 +1,27 @@
+plugins {
+    id 'idea'
+    id 'eclipse'
+    id 'java'
+    id 'application'
+    id 'java-library'
+    id 'maven-publish'
+    id 'io.spring.dependency-management'
+    id 'com.kjy-api.common.dependencies'
+}
+
+configurations {
+    implementation {
+
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+group = 'com.kjy-api'
+version = '1.0.0'
+
+java.sourceCompatibility = JavaVersion.VERSION_21
+java.targetCompatibility = JavaVersion.VERSION_21

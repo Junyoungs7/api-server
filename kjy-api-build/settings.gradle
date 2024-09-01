@@ -1,0 +1,18 @@
+pluginManagement {
+    includeBuild('../build-common')
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'kjy-api-build'
+
+
+file('../modules/msa').eachDir { dir ->
+    println("${dir.name}:${dir}")
+    include(":${dir.name}")
+    project(":${dir.name}").projectDir = dir
+}

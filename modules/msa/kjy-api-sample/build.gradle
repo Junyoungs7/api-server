@@ -1,0 +1,11 @@
+plugins {
+    id 'com.kjy-api.common'
+    id 'com.kjy-api.common.dependencies'
+    id 'com.kjy-api.swagger.dependencies'
+}
+
+dependencies {
+
+}
+
+description = 'kjy-api-sample'
